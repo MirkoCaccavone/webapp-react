@@ -1,68 +1,196 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/********************************
+   general rules
+*********************************/
 body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5;
   margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #222;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/********************************
+   header, Footer rules
+*********************************/
+header,
+footer {
+  background-color: #1d1f21;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header img {
+  max-width: 120px;
+  height: auto;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ff4a57;
+}
+
+/********************************
+   homePage rules
+*********************************/
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/********************************
+   MoviePage rules
+*********************************/
+.movie-page {
+  padding: 40px;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.movie-page header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.movie-page img {
+  max-width: 70%;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.movie-page h1 {
+  font-size: 2.8rem;
+  color: #ff4a57;
+  margin-bottom: 15px;
+}
+
+.movie-page h3 {
+  font-size: 1.6rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.movie-page p {
+  max-width: 900px;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+  padding: 0 15px;
+}
+
+/********************************
+   review section rules
+*********************************/
+.movie-page section#reviews {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.movie-page section#reviews header {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+/********************************
+   movie and review card rules
+*********************************/
+.movie-card,
+.review-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.movie-card:hover,
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.movie-card img {
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 200px;
+}
+
+.movie-card h5,
+.review-card p {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.movie-card address,
+.review-card address {
+  font-style: normal;
+  color: #777;
+}
+
+.movie-card .card-text {
+  color: #555;
+  line-height: 1.6;
+}
+
+.movie-card a {
+  color: #ff4a57;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.movie-card a:hover {
+  text-decoration: underline;
+  color: #d43745;
+  transform: translateY(-2px);
 }
