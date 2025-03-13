@@ -30,39 +30,32 @@ const ReviewForm = ({ movie_id, reloadReviews }) => {
     }
 
     return (
-        <div >
-
-            <header>
-                <h5>Add your review</h5>
-            </header>
-
-            <div>
+        <div className="review-form-container">
+            <div className="review-form">
+                <h5 className="form-title">Add your review</h5>
 
                 <form onSubmit={submitReview}>
-
-                    <div>
+                    <div className="form-group">
                         <label>Name</label>
                         <input type="text" name="name" value={formData.name} onChange={setFieldValue} />
                     </div>
 
-                    <div >
+                    <div className="form-group">
                         <label>Review</label>
-                        <textarea name="text" value={formData.text} onChange={setFieldValue} ></textarea>
+                        <textarea name="text" value={formData.text} onChange={setFieldValue}></textarea>
                     </div>
 
-                    <div>
+                    <div className="form-group">
                         <label>Voto</label>
                         <input type="number" min="1" max="5" name='vote' value={formData.vote} onChange={setFieldValue} />
                     </div>
 
-                    <div>
+                    <div className="form-group">
                         <button type="submit">
                             Send
                         </button>
                     </div>
-
                 </form>
-
             </div>
         </div>
     )
