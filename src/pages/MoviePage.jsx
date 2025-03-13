@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from "react-router-dom"
 import ReviewCard from './../components/ReviewCard';
 
+import ReviewForm from './../components/ReviewForm';
+
 const MoviePage = () => {
 
     // recuperiamo l'id del film richiesto
@@ -22,7 +24,7 @@ const MoviePage = () => {
             .then(res => { setMovie(res.data) })
             .catch(err => {
                 console.log(err);
-                if (err.status === 404) redirect('*')
+                if (err.status === 404) redirect('/404')
             })
 
     }
@@ -57,6 +59,7 @@ const MoviePage = () => {
                     </div>
                 </div>
             </header>
+
             <section id="reviews">
 
                 <h2>Our community reviews</h2>
@@ -64,6 +67,10 @@ const MoviePage = () => {
                 {/* Reviews qui */}
                 {renderReviews()}
             </section>
+            <section>
+                <ReviewForm movie_id={movie.id} reloadReviews={fetchMovie} />
+            </section>
+
             <footer>
                 <Link to="/">Back to home</Link>
             </footer>
