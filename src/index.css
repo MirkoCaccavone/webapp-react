@@ -1,362 +1,81 @@
-/********************************
-   general rules
-*********************************/
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f0f2f5;
-  margin: 0;
-  padding: 0;
+  background-color: #f4f6f9;
+  font-family: 'Roboto', sans-serif;
   color: #333;
-  line-height: 1.6;
 }
 
 h1,
 h2,
-h3,
-h4,
-h5 {
+h3 {
+  font-weight: bold;
   color: #222;
-  font-weight: 600;
-  margin-bottom: 15px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/********************************
-   header, Footer rules
-*********************************/
-header,
-footer {
-  background-color: #1d1f21;
-  color: white;
-  padding: 15px 30px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-header img {
-  max-width: 120px;
-  height: auto;
-}
-
-footer {
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #bbb;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: #ff4a57;
-}
-
-/********************************
-   homePage rules
-*********************************/
-.movie-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px 0;
-}
-
-/********************************
-   MoviePage rules
-*********************************/
-.movie-page {
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.movie-page header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.detail-content {
-  width: 70%;
-}
-
-.movie-page img {
-  max-width: 30%;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.movie-page h1 {
-  font-size: 2.8rem;
-  color: #ff4a57;
-  margin-bottom: 15px;
-}
-
-.movie-page h3 {
-  font-size: 1.6rem;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.movie-page p {
-  max-width: 900px;
-  font-size: 1.1rem;
-  color: #444;
-  line-height: 1.8;
-  padding: 0 15px;
-}
-
-/********************************
-   review section rules
-*********************************/
-.movie-page section#reviews {
-  width: 100%;
-  max-width: 900px;
-  margin-top: 40px;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.movie-page section#reviews header {
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-}
-
-/********************************
-   movie and review card rules
-*********************************/
-.movie-card,
-.review-card {
-  background-color: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.movie-card:hover,
-.review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-.movie-card img {
-  max-width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  height: 200px;
-}
-
-.movie-card h5,
-.review-card p {
-  margin: 15px 0;
-  font-size: 1.2rem;
-}
-
-.movie-card address,
-.review-card address {
-  font-style: normal;
-  color: #777;
-}
-
-.movie-card .card-text {
-  color: #555;
-  line-height: 1.6;
-}
-
-.movie-card a {
-  color: #ff4a57;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.movie-card a:hover {
-  text-decoration: underline;
-  color: #d43745;
-  transform: translateY(-2px);
-}
-
-/********************************
-   notFoundPage rules
-*********************************/
-
-.not-found-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #1e1e1e, #252525);
-  color: #fff;
-  text-align: center;
-}
-
-.not-found-content {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-.not-found-title {
-  font-size: 6rem;
-  margin-bottom: 10px;
-  color: #ff4d4d;
-  text-shadow: 2px 2px 10px rgba(255, 77, 77, 0.8);
-}
-
-.not-found-subtitle {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: #777;
-}
-
-.not-found-text {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 600px;
-  opacity: 0.8;
-}
-
-.not-found-link {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #ff4d4d;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  transition: 0.3s ease-in-out;
-  box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
-}
-
-.not-found-link:hover {
-  background: #cc0000;
-  box-shadow: 0 8px 20px rgba(255, 77, 77, 0.6);
-  transform: translateY(-3px);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/********************************
-   review form rules
-*********************************/
-
-/* Contenitore principale per centrare il form */
-.review-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
+  margin: 0 auto;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+  background-color: #fff;
   padding: 20px;
+  border-radius: 8px;
 }
 
-/* Stile del form */
-.review-form {
-  width: 400px;
-  max-width: 500px;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.card-title {
+  font-size: 1.4rem;
+  /* Aumenta la dimensione del titolo */
 }
 
-/* Titolo del form */
-.form-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-/* Stile dei gruppi di input */
-.form-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-/* Label */
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #555;
-}
-
-/* Input e textarea */
-.form-group input,
-.form-group textarea {
-  width: 100%;
-
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.card-text {
   font-size: 1rem;
-  transition: border-color 0.3s;
+  /* Aumenta la dimensione del testo */
+  color: #666;
 }
 
-/* Effetto focus */
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #ff4a57;
-  outline: none;
-}
-
-/* Textarea */
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-/* Pulsante di invio */
-.form-group button {
-  width: 100%;
-  background-color: #ff4a57;
-  color: white;
+.btn-primary {
+  background-color: #007bff;
   border: none;
-  padding: 12px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
 }
 
-/* Effetto hover sul pulsante */
-.form-group button:hover {
-  background-color: #d43745;
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+/* Responsive grid per le card */
+.container {
+  padding-top: 50px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-sm-12 {
+  padding: 10px;
+}
+
+.col-md-6 {
+  padding: 10px;
+}
+
+.col-lg-4 {
+  padding: 10px;
+}
+
+/* Hover effect per le card */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }

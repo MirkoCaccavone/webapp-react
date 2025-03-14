@@ -30,33 +30,23 @@ const ReviewForm = ({ movie_id, reloadReviews }) => {
     }
 
     return (
-        <div className="review-form-container">
-            <div className="review-form">
-                <h5 className="form-title">Add your review</h5>
-
-                <form onSubmit={submitReview}>
-                    <div className="form-group">
-                        <label>Name</label>
-                        <input type="text" name="name" value={formData.name} onChange={setFieldValue} />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Review</label>
-                        <textarea name="text" value={formData.text} onChange={setFieldValue}></textarea>
-                    </div>
-
-                    <div className="form-group">
-                        <label>Voto</label>
-                        <input type="number" min="1" max="5" name='vote' value={formData.vote} onChange={setFieldValue} />
-                    </div>
-
-                    <div className="form-group">
-                        <button type="submit">
-                            Send
-                        </button>
-                    </div>
-                </form>
-            </div>
+        <div className="card p-3">
+            <h5>Add your review</h5>
+            <form onSubmit={submitReview}>
+                <div className="mb-3">
+                    <label className="form-label">Name</label>
+                    <input type="text" className="form-control" name="name" value={formData.name} onChange={setFieldValue} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Review</label>
+                    <textarea className="form-control" name="text" value={formData.text} onChange={setFieldValue}></textarea>
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Vote</label>
+                    <input type="number" min="1" max="5" name="vote" className="form-control" value={formData.vote} onChange={setFieldValue} />
+                </div>
+                <button type="submit" className="btn btn-success">Send</button>
+            </form>
         </div>
     )
 }

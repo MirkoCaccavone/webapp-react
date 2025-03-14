@@ -22,7 +22,7 @@ const HomePage = () => {
         return movies.map(
             movie => {
                 return (
-                    <div key={movie.id}>
+                    <div key={movie.id} className="col-md-4 mb-4">
                         <MovieCard movieProp={movie} />
                     </div>
                 )
@@ -33,11 +33,13 @@ const HomePage = () => {
 
     return (
         <>
-            <h1>Bool Movies</h1>
-            <h2><i>movies</i></h2>
-            <div className="movie-list">
-                {/* Libri qui */}
-                {renderMovie()}
+            <div className="container mt-5">
+                <h1>Bool Movies</h1>
+                <h2><i>movies</i></h2>
+                <div className="row">
+                    {/* Render delle card */}
+                    {renderMovie()}
+                </div>
             </div>
         </>
     )

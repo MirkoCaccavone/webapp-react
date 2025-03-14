@@ -40,39 +40,34 @@ const MoviePage = () => {
 
 
     return (
-        <div className="movie-page">
-            <header>
-                <div className='detail-content'>
-                    <img
-                        src={movie.image}
-                        alt={movie.title} />
-                    <div>
-                        <h1>{movie.title}</h1>
-                        <h3>
-                            <i>
-                                By {movie.director}
-                            </i>
-                        </h3>
-                        <p>
-                            {movie.abstract}
-                        </p>
-                    </div>
+        <div className="container mt-5">
+            <header className="row">
+                <div className="col-lg-4 mb-4">
+                    <img src={movie.image} className="img-fluid rounded" alt={movie.title} />
+                </div>
+                <div className="col-lg-8">
+                    <h1 className="display-4">{movie.title}</h1>
+                    <h3 className="text-muted"><i>By {movie.director}</i></h3>
+                    <p>{movie.abstract}</p>
+                    <p><strong>Release Year:</strong> {movie.release_year}</p>
+                    <p><strong>Genre:</strong> {movie.genre}</p>
                 </div>
             </header>
 
-            <section id="reviews">
-
-                <h2>Our community reviews</h2>
+            <section>
+                <h2 className="mt-5">Our Community Reviews</h2>
 
                 {/* Reviews qui */}
                 {renderReviews()}
+
             </section>
-            <section>
+
+            <section className="mt-4">
                 <ReviewForm movie_id={movie.id} reloadReviews={fetchMovie} />
             </section>
 
-            <footer>
-                <Link to="/">Back to home</Link>
+            <footer className="mt-5">
+                <Link to="/" className="btn btn-secondary">Back to Home</Link>
             </footer>
         </div>
     )
